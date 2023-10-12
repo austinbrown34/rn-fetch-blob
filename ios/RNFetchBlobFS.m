@@ -214,7 +214,7 @@ NSMutableDictionary *fileStreams = nil;
                 free(buffer);
 
         }
-        @catch (NSError * err)
+        @catch (NSException * err)
         {
             NSDictionary * payload = @{ @"event": FS_EVENT_ERROR, @"code": @"EUNSPECIFIED", @"detail": [err description] };
             [event sendDeviceEventWithName:streamId body:payload];
